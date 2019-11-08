@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35025B8B2375345800A4A81E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025B8A2375345800A4A81E /* AppDelegate.swift */; };
+		35025B8D2375345800A4A81E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025B8C2375345800A4A81E /* SceneDelegate.swift */; };
+		35025B8F2375345800A4A81E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025B8E2375345800A4A81E /* ViewController.swift */; };
+		35025B922375345800A4A81E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35025B902375345800A4A81E /* Main.storyboard */; };
+		35025B942375345900A4A81E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35025B932375345900A4A81E /* Assets.xcassets */; };
+		35025B972375345900A4A81E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35025B952375345900A4A81E /* LaunchScreen.storyboard */; };
+		35025BA22375345900A4A81E /* TronaldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BA12375345900A4A81E /* TronaldTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		35025B9E2375345900A4A81E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35025B7F2375345800A4A81E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35025B862375345800A4A81E;
+			remoteInfo = Tronald;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		35025B872375345800A4A81E /* Tronald.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tronald.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35025B8A2375345800A4A81E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		35025B8C2375345800A4A81E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		35025B8E2375345800A4A81E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		35025B912375345800A4A81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		35025B932375345900A4A81E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35025B962375345900A4A81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		35025B982375345900A4A81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35025B9D2375345900A4A81E /* TronaldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TronaldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		35025BA12375345900A4A81E /* TronaldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TronaldTests.swift; sourceTree = "<group>"; };
+		35025BA32375345900A4A81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35025B842375345800A4A81E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35025B9A2375345900A4A81E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		35025B7E2375345800A4A81E = {
+			isa = PBXGroup;
+			children = (
+				35025B892375345800A4A81E /* Tronald */,
+				35025BA02375345900A4A81E /* TronaldTests */,
+				35025B882375345800A4A81E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		35025B882375345800A4A81E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35025B872375345800A4A81E /* Tronald.app */,
+				35025B9D2375345900A4A81E /* TronaldTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		35025B892375345800A4A81E /* Tronald */ = {
+			isa = PBXGroup;
+			children = (
+				35025B8A2375345800A4A81E /* AppDelegate.swift */,
+				35025B8C2375345800A4A81E /* SceneDelegate.swift */,
+				35025B8E2375345800A4A81E /* ViewController.swift */,
+				35025B902375345800A4A81E /* Main.storyboard */,
+				35025B932375345900A4A81E /* Assets.xcassets */,
+				35025B952375345900A4A81E /* LaunchScreen.storyboard */,
+				35025B982375345900A4A81E /* Info.plist */,
+			);
+			path = Tronald;
+			sourceTree = "<group>";
+		};
+		35025BA02375345900A4A81E /* TronaldTests */ = {
+			isa = PBXGroup;
+			children = (
+				35025BA12375345900A4A81E /* TronaldTests.swift */,
+				35025BA32375345900A4A81E /* Info.plist */,
+			);
+			path = TronaldTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		35025B862375345800A4A81E /* Tronald */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35025BA62375345900A4A81E /* Build configuration list for PBXNativeTarget "Tronald" */;
+			buildPhases = (
+				35025B832375345800A4A81E /* Sources */,
+				35025B842375345800A4A81E /* Frameworks */,
+				35025B852375345800A4A81E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tronald;
+			productName = Tronald;
+			productReference = 35025B872375345800A4A81E /* Tronald.app */;
+			productType = "com.apple.product-type.application";
+		};
+		35025B9C2375345900A4A81E /* TronaldTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35025BA92375345900A4A81E /* Build configuration list for PBXNativeTarget "TronaldTests" */;
+			buildPhases = (
+				35025B992375345900A4A81E /* Sources */,
+				35025B9A2375345900A4A81E /* Frameworks */,
+				35025B9B2375345900A4A81E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35025B9F2375345900A4A81E /* PBXTargetDependency */,
+			);
+			name = TronaldTests;
+			productName = TronaldTests;
+			productReference = 35025B9D2375345900A4A81E /* TronaldTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35025B7F2375345800A4A81E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = none;
+				TargetAttributes = {
+					35025B862375345800A4A81E = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					35025B9C2375345900A4A81E = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 35025B862375345800A4A81E;
+					};
+				};
+			};
+			buildConfigurationList = 35025B822375345800A4A81E /* Build configuration list for PBXProject "Tronald" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 35025B7E2375345800A4A81E;
+			productRefGroup = 35025B882375345800A4A81E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35025B862375345800A4A81E /* Tronald */,
+				35025B9C2375345900A4A81E /* TronaldTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		35025B852375345800A4A81E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35025B972375345900A4A81E /* LaunchScreen.storyboard in Resources */,
+				35025B942375345900A4A81E /* Assets.xcassets in Resources */,
+				35025B922375345800A4A81E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35025B9B2375345900A4A81E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35025B832375345800A4A81E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35025B8F2375345800A4A81E /* ViewController.swift in Sources */,
+				35025B8B2375345800A4A81E /* AppDelegate.swift in Sources */,
+				35025B8D2375345800A4A81E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35025B992375345900A4A81E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35025BA22375345900A4A81E /* TronaldTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		35025B9F2375345900A4A81E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35025B862375345800A4A81E /* Tronald */;
+			targetProxy = 35025B9E2375345900A4A81E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		35025B902375345800A4A81E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35025B912375345800A4A81E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		35025B952375345900A4A81E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35025B962375345900A4A81E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		35025BA42375345900A4A81E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		35025BA52375345900A4A81E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		35025BA72375345900A4A81E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23DXEZL7HL;
+				INFOPLIST_FILE = Tronald/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ivn.Tronald;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		35025BA82375345900A4A81E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23DXEZL7HL;
+				INFOPLIST_FILE = Tronald/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ivn.Tronald;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		35025BAA2375345900A4A81E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23DXEZL7HL;
+				INFOPLIST_FILE = TronaldTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ivn.TronaldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tronald.app/Tronald";
+			};
+			name = Debug;
+		};
+		35025BAB2375345900A4A81E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 23DXEZL7HL;
+				INFOPLIST_FILE = TronaldTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Ivn.TronaldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tronald.app/Tronald";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35025B822375345800A4A81E /* Build configuration list for PBXProject "Tronald" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35025BA42375345900A4A81E /* Debug */,
+				35025BA52375345900A4A81E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35025BA62375345900A4A81E /* Build configuration list for PBXNativeTarget "Tronald" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35025BA72375345900A4A81E /* Debug */,
+				35025BA82375345900A4A81E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35025BA92375345900A4A81E /* Build configuration list for PBXNativeTarget "TronaldTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35025BAA2375345900A4A81E /* Debug */,
+				35025BAB2375345900A4A81E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35025B7F2375345800A4A81E /* Project object */;
+}
