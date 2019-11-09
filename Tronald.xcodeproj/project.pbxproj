@@ -8,12 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		35025B8B2375345800A4A81E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025B8A2375345800A4A81E /* AppDelegate.swift */; };
-		35025B8D2375345800A4A81E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025B8C2375345800A4A81E /* SceneDelegate.swift */; };
 		35025B8F2375345800A4A81E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025B8E2375345800A4A81E /* ViewController.swift */; };
 		35025B922375345800A4A81E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35025B902375345800A4A81E /* Main.storyboard */; };
 		35025B942375345900A4A81E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35025B932375345900A4A81E /* Assets.xcassets */; };
 		35025B972375345900A4A81E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35025B952375345900A4A81E /* LaunchScreen.storyboard */; };
 		35025BA22375345900A4A81E /* TronaldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BA12375345900A4A81E /* TronaldTests.swift */; };
+		35025BAE2375368A00A4A81E /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BAD2375368A00A4A81E /* CommonViewController.swift */; };
+		35025BB1237538D900A4A81E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BB0237538D900A4A81E /* Observable.swift */; };
+		35025BB4237539B400A4A81E /* ApplicationDeps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BB3237539B400A4A81E /* ApplicationDeps.swift */; };
+		35025BC123753D8300A4A81E /* RandomMemeQuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BC023753D8300A4A81E /* RandomMemeQuoteViewModel.swift */; };
+		35025BC323753D9200A4A81E /* RandomMemeQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BC223753D9200A4A81E /* RandomMemeQuoteViewController.swift */; };
+		35025BC523753DA400A4A81E /* RandomMemeQuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BC423753DA400A4A81E /* RandomMemeQuoteModel.swift */; };
+		35025BCC237540BA00A4A81E /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BC8237540BA00A4A81E /* NetworkServiceError.swift */; };
+		35025BCD237540BA00A4A81E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BC9237540BA00A4A81E /* NetworkManager.swift */; };
+		35025BCE237540BA00A4A81E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BCA237540BA00A4A81E /* NetworkService.swift */; };
+		35025BCF237540BA00A4A81E /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BCB237540BA00A4A81E /* ApiRequest.swift */; };
+		35025BD42375413100A4A81E /* TagsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BD12375413100A4A81E /* TagsListModel.swift */; };
+		35025BD52375413100A4A81E /* QuotesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BD22375413100A4A81E /* QuotesListModel.swift */; };
+		35025BD62375413100A4A81E /* SearchQuotesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BD32375413100A4A81E /* SearchQuotesListModel.swift */; };
+		35025BD82375433300A4A81E /* WeakObjectCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BD72375433300A4A81E /* WeakObjectCollection.swift */; };
+		35025BDA237556A200A4A81E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BD9237556A200A4A81E /* AppCoordinator.swift */; };
+		35FC1FEF2376D0B100E35CFD /* ApplicationModelsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC1FEE2376D0B100E35CFD /* ApplicationModelsState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +44,6 @@
 /* Begin PBXFileReference section */
 		35025B872375345800A4A81E /* Tronald.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tronald.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35025B8A2375345800A4A81E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35025B8C2375345800A4A81E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		35025B8E2375345800A4A81E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35025B912375345800A4A81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35025B932375345900A4A81E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +52,22 @@
 		35025B9D2375345900A4A81E /* TronaldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TronaldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35025BA12375345900A4A81E /* TronaldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TronaldTests.swift; sourceTree = "<group>"; };
 		35025BA32375345900A4A81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35025BAD2375368A00A4A81E /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		35025BB0237538D900A4A81E /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		35025BB3237539B400A4A81E /* ApplicationDeps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDeps.swift; sourceTree = "<group>"; };
+		35025BC023753D8300A4A81E /* RandomMemeQuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMemeQuoteViewModel.swift; sourceTree = "<group>"; };
+		35025BC223753D9200A4A81E /* RandomMemeQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMemeQuoteViewController.swift; sourceTree = "<group>"; };
+		35025BC423753DA400A4A81E /* RandomMemeQuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMemeQuoteModel.swift; sourceTree = "<group>"; };
+		35025BC8237540BA00A4A81E /* NetworkServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		35025BC9237540BA00A4A81E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		35025BCA237540BA00A4A81E /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		35025BCB237540BA00A4A81E /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		35025BD12375413100A4A81E /* TagsListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsListModel.swift; sourceTree = "<group>"; };
+		35025BD22375413100A4A81E /* QuotesListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesListModel.swift; sourceTree = "<group>"; };
+		35025BD32375413100A4A81E /* SearchQuotesListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchQuotesListModel.swift; sourceTree = "<group>"; };
+		35025BD72375433300A4A81E /* WeakObjectCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakObjectCollection.swift; sourceTree = "<group>"; };
+		35025BD9237556A200A4A81E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		35FC1FEE2376D0B100E35CFD /* ApplicationModelsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModelsState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +109,13 @@
 		35025B892375345800A4A81E /* Tronald */ = {
 			isa = PBXGroup;
 			children = (
+				35025BD02375413100A4A81E /* Models */,
+				35025BC62375409C00A4A81E /* Services */,
+				35025BB823753C0100A4A81E /* Controllers */,
+				35025BB2237539A400A4A81E /* Application */,
+				35025BAF237538B100A4A81E /* Helpers */,
+				35025BAC2375367900A4A81E /* Base */,
 				35025B8A2375345800A4A81E /* AppDelegate.swift */,
-				35025B8C2375345800A4A81E /* SceneDelegate.swift */,
 				35025B8E2375345800A4A81E /* ViewController.swift */,
 				35025B902375345800A4A81E /* Main.storyboard */,
 				35025B932375345900A4A81E /* Assets.xcassets */,
@@ -97,6 +132,80 @@
 				35025BA32375345900A4A81E /* Info.plist */,
 			);
 			path = TronaldTests;
+			sourceTree = "<group>";
+		};
+		35025BAC2375367900A4A81E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				35025BAD2375368A00A4A81E /* CommonViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		35025BAF237538B100A4A81E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				35025BD72375433300A4A81E /* WeakObjectCollection.swift */,
+				35025BB0237538D900A4A81E /* Observable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		35025BB2237539A400A4A81E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				35025BB3237539B400A4A81E /* ApplicationDeps.swift */,
+				35FC1FEE2376D0B100E35CFD /* ApplicationModelsState.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		35025BB823753C0100A4A81E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				35025BBD23753D4B00A4A81E /* Random */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		35025BBD23753D4B00A4A81E /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				35025BC023753D8300A4A81E /* RandomMemeQuoteViewModel.swift */,
+				35025BC223753D9200A4A81E /* RandomMemeQuoteViewController.swift */,
+				35025BC423753DA400A4A81E /* RandomMemeQuoteModel.swift */,
+			);
+			path = Random;
+			sourceTree = "<group>";
+		};
+		35025BC62375409C00A4A81E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				35025BC7237540BA00A4A81E /* Network */,
+				35025BD9237556A200A4A81E /* AppCoordinator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		35025BC7237540BA00A4A81E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				35025BC8237540BA00A4A81E /* NetworkServiceError.swift */,
+				35025BC9237540BA00A4A81E /* NetworkManager.swift */,
+				35025BCA237540BA00A4A81E /* NetworkService.swift */,
+				35025BCB237540BA00A4A81E /* ApiRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		35025BD02375413100A4A81E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				35025BD12375413100A4A81E /* TagsListModel.swift */,
+				35025BD22375413100A4A81E /* QuotesListModel.swift */,
+				35025BD32375413100A4A81E /* SearchQuotesListModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +309,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35025BCD237540BA00A4A81E /* NetworkManager.swift in Sources */,
+				35025BC123753D8300A4A81E /* RandomMemeQuoteViewModel.swift in Sources */,
+				35025BC523753DA400A4A81E /* RandomMemeQuoteModel.swift in Sources */,
 				35025B8F2375345800A4A81E /* ViewController.swift in Sources */,
+				35025BB1237538D900A4A81E /* Observable.swift in Sources */,
+				35025BB4237539B400A4A81E /* ApplicationDeps.swift in Sources */,
+				35FC1FEF2376D0B100E35CFD /* ApplicationModelsState.swift in Sources */,
+				35025BDA237556A200A4A81E /* AppCoordinator.swift in Sources */,
+				35025BAE2375368A00A4A81E /* CommonViewController.swift in Sources */,
+				35025BCC237540BA00A4A81E /* NetworkServiceError.swift in Sources */,
 				35025B8B2375345800A4A81E /* AppDelegate.swift in Sources */,
-				35025B8D2375345800A4A81E /* SceneDelegate.swift in Sources */,
+				35025BC323753D9200A4A81E /* RandomMemeQuoteViewController.swift in Sources */,
+				35025BCE237540BA00A4A81E /* NetworkService.swift in Sources */,
+				35025BD62375413100A4A81E /* SearchQuotesListModel.swift in Sources */,
+				35025BD42375413100A4A81E /* TagsListModel.swift in Sources */,
+				35025BD82375433300A4A81E /* WeakObjectCollection.swift in Sources */,
+				35025BCF237540BA00A4A81E /* ApiRequest.swift in Sources */,
+				35025BD52375413100A4A81E /* QuotesListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -348,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -365,6 +489,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23DXEZL7HL;
 				INFOPLIST_FILE = Tronald/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,7 +497,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Ivn.Tronald;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -383,6 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23DXEZL7HL;
 				INFOPLIST_FILE = Tronald/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,7 +516,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Ivn.Tronald;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
