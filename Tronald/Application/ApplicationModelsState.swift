@@ -8,30 +8,62 @@
 
 import Foundation
 
-protocol ApplicationStateProtocol: RandomMemeQuoteModel, RandomMemeQuoteFetcher {
+protocol ApplicationStateProtocol: RandomMemeQuoteModelProtocol, TagsQuotesListModelProtocol, SearchQuotesListModelProtocol {
    
 }
 
-protocol RandomMemeQuoteModel {
-    var randomMemeImageData: Observable <Data?> { get }
-    var randomQuoteModel: Observable <Quote?> { get }
+protocol TagsQuotesListModelProtocol {
+    var tagsListModel: Observable <TagsListModel?> { get }
+    var quotesListModel: Observable <QuotesListModel?> { get }
+    var tag: String { set get }
+    
+    func fetchTags()
+    func fetchQuotesForTag(_ tag: String)
 }
 
-protocol RandomMemeQuoteFetcher {
+protocol SearchQuotesListModelProtocol  {
+    var searchQuotesListModel: Observable <SearchQuotesListModel?>  { get }
+    func searchQuotes(searchQuote: String)
+}
+
+protocol RandomMemeQuoteModelProtocol {
+    var randomMemeImageData: Observable <Data?> { get }
+    var randomQuoteModel: Observable <QuoteModel?> { get }
+    
     func refreshRandomMeme()
     func refreshRandomQuote()
 }
 
+
 class ApplicationState: ApplicationStateProtocol {
-    private var networkManager: NetworkManagerProtocol
     
-    var randomQuoteModel: Observable<Quote?>
+    private var networkManager: NetworkManagerProtocol
+    private let pageSize = 25
+    
+    //tags / quotes  models
+    var tagsListModel: Observable<TagsListModel?>
+    var quotesListModel: Observable<QuotesListModel?>
+    
+    var tag: String = "" {
+        didSet {
+            self.quotesListModel = Observable(nil)
+        }
+    }
+    
+    //random quote/meme models
+    var randomQuoteModel: Observable<QuoteModel?>
     var randomMemeImageData: Observable<Data?>
     
+    //search quote models
+    var searchQuotesListModel: Observable<SearchQuotesListModel?>
+    //TagsListModel
     init(networkManager: NetworkManagerProtocol) {
         self.networkManager = networkManager
-        randomMemeImageData = Observable(nil)
-        randomQuoteModel =  Observable(nil)
+        self.randomMemeImageData = Observable(nil)
+        self.randomQuoteModel = Observable(nil)
+        self.searchQuotesListModel = Observable(nil)
+        self.tagsListModel = Observable(nil)
+        self.quotesListModel = Observable(nil)
     }
     
     func refreshRandomMeme() {
@@ -42,10 +74,41 @@ class ApplicationState: ApplicationStateProtocol {
     
     func refreshRandomQuote() {
         self.networkManager.fetchRandomQuote { randomQuote in
-                 if let randomQuote = randomQuote {
-                     self.randomQuoteModel.value = randomQuote
-                 }
-             }
+            if let randomQuote = randomQuote {
+                self.randomQuoteModel.value = randomQuote
+            }
+        }
     }
     
+    func searchQuotes(searchQuote: String) {
+        self.networkManager.searchQuotes(searchQuote: searchQuote) { searchListModel in
+            self.searchQuotesListModel.value = searchListModel
+        }
+    }
+    
+    func fetchTags() {
+        self.networkManager.fetchTags { tagsListModel in
+            self.tagsListModel.value = tagsListModel
+        }
+    }
+    
+    func fetchQuotesForTag(_ tag: String) {
+        var page = 0
+        if quotesListModel.value != nil, let currentPage = quotesListModel.value?.page {
+           page = currentPage
+        }
+        
+        self.networkManager.fetchQuotes(page: page, size: pageSize, tag: tag) { quotesListModel in
+            if let newQuotes = quotesListModel?.quotes, newQuotes.count > 0 {
+                if self.quotesListModel.value != nil {
+                    let quoteModel = self.quotesListModel.value!
+                    quoteModel.appendPage(newQuotes)
+                    self.quotesListModel.value = quoteModel
+                    
+                } else {
+                    self.quotesListModel.value = quotesListModel
+                }
+            }
+        }
+    }
 }

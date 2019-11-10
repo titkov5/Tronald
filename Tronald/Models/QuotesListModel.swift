@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Quote: Decodable {
+class QuoteModel: Decodable {
     var appeared_at: String
     var created_at: String
     var quote_id: String
@@ -19,7 +19,10 @@ class Quote: Decodable {
 class QuotesListModel: Decodable {
     var count: Int = 0
     var total: Int = 0
-    var quotes: [Quote]
+    var quotes: [QuoteModel]
+    var page: Int = 1
+    var isFull: Bool = false
+  
     
     enum CodingKeys: String, CodingKey {
         case embedded = "_embedded"
@@ -35,7 +38,15 @@ class QuotesListModel: Decodable {
         total = try container.decode(Int.self, forKey: .total)
         
         let nestedContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .embedded)
-        quotes = try nestedContainer.decode([Quote].self, forKey: .tags)
+        quotes = try nestedContainer.decode([QuoteModel].self, forKey: .tags)
+        page += 1
+        isFull = total == count
+    }
+    
+    func appendPage(_ quotes: [QuoteModel]) {
+        self.quotes.append(contentsOf: quotes)
+        self.count  = self.quotes.count
+        self.isFull = self.count == self.total
     }
 }
 

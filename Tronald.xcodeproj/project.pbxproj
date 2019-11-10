@@ -16,7 +16,6 @@
 		35025BB4237539B400A4A81E /* ApplicationDeps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BB3237539B400A4A81E /* ApplicationDeps.swift */; };
 		35025BC123753D8300A4A81E /* RandomMemeQuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BC023753D8300A4A81E /* RandomMemeQuoteViewModel.swift */; };
 		35025BC323753D9200A4A81E /* RandomMemeQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BC223753D9200A4A81E /* RandomMemeQuoteViewController.swift */; };
-		35025BC523753DA400A4A81E /* RandomMemeQuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BC423753DA400A4A81E /* RandomMemeQuoteModel.swift */; };
 		35025BCC237540BA00A4A81E /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BC8237540BA00A4A81E /* NetworkServiceError.swift */; };
 		35025BCD237540BA00A4A81E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BC9237540BA00A4A81E /* NetworkManager.swift */; };
 		35025BCE237540BA00A4A81E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BCA237540BA00A4A81E /* NetworkService.swift */; };
@@ -31,6 +30,14 @@
 		35FC20012378098600E35CFD /* tags.json in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1FFD2378098600E35CFD /* tags.json */; };
 		35FC20022378098600E35CFD /* NetworkLayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC1FFE2378098600E35CFD /* NetworkLayerTest.swift */; };
 		35FC20032378098600E35CFD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1FFF2378098600E35CFD /* Info.plist */; };
+		35FC20072378221600E35CFD /* SearchQuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC20062378221600E35CFD /* SearchQuoteViewModel.swift */; };
+		35FC200B237847D400E35CFD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC200A237847D400E35CFD /* SearchViewController.swift */; };
+		35FC200E237853B000E35CFD /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC200D237853B000E35CFD /* QuoteTableViewCell.swift */; };
+		35FC201223786A2A00E35CFD /* TagsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC201123786A2A00E35CFD /* TagsListViewController.swift */; };
+		35FC201423786A4700E35CFD /* TagsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC201323786A4700E35CFD /* TagsListViewModel.swift */; };
+		35FC201623786DAD00E35CFD /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC201523786DAD00E35CFD /* TagTableViewCell.swift */; };
+		35FC20192378818F00E35CFD /* QuotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC20182378818F00E35CFD /* QuotesListViewController.swift */; };
+		35FC201B237881B000E35CFD /* QuotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC201A237881B000E35CFD /* QuotesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +64,6 @@
 		35025BB3237539B400A4A81E /* ApplicationDeps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDeps.swift; sourceTree = "<group>"; };
 		35025BC023753D8300A4A81E /* RandomMemeQuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMemeQuoteViewModel.swift; sourceTree = "<group>"; };
 		35025BC223753D9200A4A81E /* RandomMemeQuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMemeQuoteViewController.swift; sourceTree = "<group>"; };
-		35025BC423753DA400A4A81E /* RandomMemeQuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMemeQuoteModel.swift; sourceTree = "<group>"; };
 		35025BC8237540BA00A4A81E /* NetworkServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		35025BC9237540BA00A4A81E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		35025BCA237540BA00A4A81E /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -72,6 +78,14 @@
 		35FC1FFD2378098600E35CFD /* tags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tags.json; sourceTree = "<group>"; };
 		35FC1FFE2378098600E35CFD /* NetworkLayerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLayerTest.swift; sourceTree = "<group>"; };
 		35FC1FFF2378098600E35CFD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35FC20062378221600E35CFD /* SearchQuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuoteViewModel.swift; sourceTree = "<group>"; };
+		35FC200A237847D400E35CFD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		35FC200D237853B000E35CFD /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
+		35FC201123786A2A00E35CFD /* TagsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListViewController.swift; sourceTree = "<group>"; };
+		35FC201323786A4700E35CFD /* TagsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListViewModel.swift; sourceTree = "<group>"; };
+		35FC201523786DAD00E35CFD /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
+		35FC20182378818F00E35CFD /* QuotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListViewController.swift; sourceTree = "<group>"; };
+		35FC201A237881B000E35CFD /* QuotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +127,7 @@
 		35025B892375345800A4A81E /* Tronald */ = {
 			isa = PBXGroup;
 			children = (
+				35FC200C2378538400E35CFD /* Views */,
 				35025BD02375413100A4A81E /* Models */,
 				35025BC62375409C00A4A81E /* Services */,
 				35025BB823753C0100A4A81E /* Controllers */,
@@ -166,6 +181,9 @@
 		35025BB823753C0100A4A81E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				35FC20172378817700E35CFD /* Quotes */,
+				35FC20052378219B00E35CFD /* Tags */,
+				35FC20042378218A00E35CFD /* Search */,
 				35025BBD23753D4B00A4A81E /* Random */,
 			);
 			path = Controllers;
@@ -176,7 +194,6 @@
 			children = (
 				35025BC023753D8300A4A81E /* RandomMemeQuoteViewModel.swift */,
 				35025BC223753D9200A4A81E /* RandomMemeQuoteViewController.swift */,
-				35025BC423753DA400A4A81E /* RandomMemeQuoteModel.swift */,
 			);
 			path = Random;
 			sourceTree = "<group>";
@@ -228,6 +245,42 @@
 				35FC1FFD2378098600E35CFD /* tags.json */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		35FC20042378218A00E35CFD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				35FC20062378221600E35CFD /* SearchQuoteViewModel.swift */,
+				35FC200A237847D400E35CFD /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		35FC20052378219B00E35CFD /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				35FC201123786A2A00E35CFD /* TagsListViewController.swift */,
+				35FC201323786A4700E35CFD /* TagsListViewModel.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		35FC200C2378538400E35CFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35FC200D237853B000E35CFD /* QuoteTableViewCell.swift */,
+				35FC201523786DAD00E35CFD /* TagTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		35FC20172378817700E35CFD /* Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				35FC20182378818F00E35CFD /* QuotesListViewController.swift */,
+				35FC201A237881B000E35CFD /* QuotesListViewModel.swift */,
+			);
+			path = Quotes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,20 +389,27 @@
 			files = (
 				35025BCD237540BA00A4A81E /* NetworkManager.swift in Sources */,
 				35025BC123753D8300A4A81E /* RandomMemeQuoteViewModel.swift in Sources */,
-				35025BC523753DA400A4A81E /* RandomMemeQuoteModel.swift in Sources */,
 				35025BB1237538D900A4A81E /* Observable.swift in Sources */,
 				35025BB4237539B400A4A81E /* ApplicationDeps.swift in Sources */,
 				35FC1FEF2376D0B100E35CFD /* ApplicationModelsState.swift in Sources */,
+				35FC201423786A4700E35CFD /* TagsListViewModel.swift in Sources */,
+				35FC201623786DAD00E35CFD /* TagTableViewCell.swift in Sources */,
 				35025BDA237556A200A4A81E /* AppCoordinator.swift in Sources */,
 				35025BAE2375368A00A4A81E /* CommonViewController.swift in Sources */,
 				35025BCC237540BA00A4A81E /* NetworkServiceError.swift in Sources */,
 				35025B8B2375345800A4A81E /* AppDelegate.swift in Sources */,
 				35025BC323753D9200A4A81E /* RandomMemeQuoteViewController.swift in Sources */,
+				35FC20072378221600E35CFD /* SearchQuoteViewModel.swift in Sources */,
+				35FC201B237881B000E35CFD /* QuotesListViewModel.swift in Sources */,
 				35025BCE237540BA00A4A81E /* NetworkService.swift in Sources */,
+				35FC200B237847D400E35CFD /* SearchViewController.swift in Sources */,
 				35025BD62375413100A4A81E /* SearchQuotesListModel.swift in Sources */,
 				35025BD42375413100A4A81E /* TagsListModel.swift in Sources */,
 				35025BD82375433300A4A81E /* WeakObjectCollection.swift in Sources */,
+				35FC200E237853B000E35CFD /* QuoteTableViewCell.swift in Sources */,
+				35FC201223786A2A00E35CFD /* TagsListViewController.swift in Sources */,
 				35025BCF237540BA00A4A81E /* ApiRequest.swift in Sources */,
+				35FC20192378818F00E35CFD /* QuotesListViewController.swift in Sources */,
 				35025BD52375413100A4A81E /* QuotesListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

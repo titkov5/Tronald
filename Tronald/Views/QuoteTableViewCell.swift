@@ -1,0 +1,22 @@
+//
+//  QuoteTableViewCell.swift
+//  Tronald
+//
+//  Created by Ivan Titkov on 10.11.2019.
+//  Copyright © 2019 none. All rights reserved.
+//
+
+import UIKit
+
+class QuoteTableViewCell: UITableViewCell {
+    
+    @IBOutlet private var quoteTextView: UITextView!
+    @IBOutlet private var avatar: UIImageView!
+    
+    func setup(quoteText: String) {
+        quoteTextView.text = quoteText
+        avatar.layer.cornerRadius = 22
+        avatar.clipsToBounds = true
+    }
+
+}

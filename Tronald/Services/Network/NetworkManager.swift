@@ -24,12 +24,21 @@ struct Endpoints {
     static let randomMeme = "/random/meme"
 }
 
-protocol RandomMemeQuoteProvider {
-    func fetchRandomMeme(completionHandler: @escaping(_ randomMemeData: Data?) -> Void)
-    func fetchRandomQuote(completionHandler: @escaping(_ randomQuote: Quote?) -> Void)
+protocol TagsAndRelatedQuotesProtocol {
+    func fetchTags(completionHandler: @escaping (_ tagsList: TagsListModel?) -> Void)
+    func fetchQuotes(page: Int, size:Int, tag: String, completionHandler: @escaping(_ quotes: QuotesListModel?) -> Void)
 }
 
-protocol NetworkManagerProtocol: RandomMemeQuoteProvider {
+protocol RandomMemeQuoteProvider {
+    func fetchRandomMeme(completionHandler: @escaping(_ randomMemeData: Data?) -> Void)
+    func fetchRandomQuote(completionHandler: @escaping(_ randomQuote: QuoteModel?) -> Void)
+}
+
+protocol SearchQuotesProvider {
+    func searchQuotes(searchQuote: String, completionHandler: @escaping(_ quotes: SearchQuotesListModel?) -> Void)
+}
+
+protocol NetworkManagerProtocol: RandomMemeQuoteProvider, SearchQuotesProvider, TagsAndRelatedQuotesProtocol {
     
 }
 
@@ -41,7 +50,7 @@ class NetworkManager: NetworkManagerProtocol {
         self.networkService = networkService
     }
     
-    func fetchTagListModel(completionHandler: @escaping (_ tagsList: TagsListModel?) -> Void) {
+    func fetchTags(completionHandler: @escaping (_ tagsList: TagsListModel?) -> Void) {
         let tagRequest = ApiRequest.init(httpMethod: .GET, path: Endpoints.tag ,
                                          parameters: [:], headers: jsonHeaders)
         
@@ -63,20 +72,29 @@ class NetworkManager: NetworkManagerProtocol {
         }
     }
     
-    func fetchSearchResult(searchQuote: String, completionHandler: @escaping(_ quotes: SearchQuotesListModel?) -> Void) {
+    func searchQuotes(searchQuote: String, completionHandler: @escaping(_ quotes: SearchQuotesListModel?) -> Void) {
+        
         let parameters = [kQuery: searchQuote]
+        print("parameters", parameters)
         
         let searchRequest = ApiRequest.init(httpMethod: .GET, path: Endpoints.search, parameters: parameters, headers: jsonHeaders)
         
         networkService.fetchEntities(apiRequest: searchRequest, type: SearchQuotesListModel.self) { (listModel, error) in
+            if let error = error {
+                self.handleError(error: error)
+            }
             completionHandler(listModel)
         }
     }
     
-    func fetchRandomQuote(completionHandler: @escaping(_ randomQuote: Quote?) -> Void) {
+    func fetchRandomQuote(completionHandler: @escaping(_ randomQuote: QuoteModel?) -> Void) {
         let randomQuoteRequest = ApiRequest.init(httpMethod: .GET, path: Endpoints.randomQuote, headers: jsonHeaders)
         
-        networkService.fetchEntities(apiRequest: randomQuoteRequest, type: Quote.self) { (randomQuote, error) in
+        networkService.fetchEntities(apiRequest: randomQuoteRequest, type: QuoteModel.self) { (randomQuote, error) in
+            if let error = error {
+                self.handleError(error: error)
+            }
+            
             completionHandler(randomQuote)
         }
     }
@@ -99,6 +117,6 @@ class NetworkManager: NetworkManagerProtocol {
     
     func handleError(error : Error) {
         //handle error on top level
-        print(error.localizedDescription)
+        print("internal error:", error.localizedDescription)
     }
 }

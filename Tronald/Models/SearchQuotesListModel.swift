@@ -15,11 +15,11 @@ class SearchQuotesListModel: Decodable {
         case quotes
     }
     
-    var quotes: [Quote]
+    var quotes: [QuoteModel]
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let nestedContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .embedded)
-        quotes = try nestedContainer.decode([Quote].self, forKey: .quotes)
+        quotes = try nestedContainer.decode([QuoteModel].self, forKey: .quotes)
     }
 }

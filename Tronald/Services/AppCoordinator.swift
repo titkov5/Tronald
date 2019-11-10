@@ -28,23 +28,29 @@ class AppCoordinator: Coordinator {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let rndVC = storyboard.instantiateViewController(withIdentifier: "RandomMemeQuoteViewController") as! RandomMemeQuoteViewController
 
-        let vm = RandomMemeQuoteViewModel(appState: appDeps.appState , dataFetcher: appDeps.appState)
-        
+        let vm = RandomMemeQuoteViewModel(appState: appDeps.appState)
         rndVC.bind(to: vm )
-       
-        let navigationController = UINavigationController(rootViewController: rndVC)
-             navigationController.title = "RNDM"
+        
+        let rndNC = UINavigationController(rootViewController: rndVC)
+        rndNC.title = "RNDM"
              //navigationController.tabBarItem.image = UIImage.init(named: "map-icon-1")
         
-       let vc = UIViewController.init()
-        vc.view.backgroundColor = .black
+        let searchViewModel = SearchQuoteViewModel(appState: appDeps.appState)
+        let searchVC = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        searchVC.bind(to: searchViewModel)
         
-        let navigationController2 = UINavigationController(rootViewController: vc)
-        navigationController2.title = "black"
+        let searchNC = UINavigationController(rootViewController: searchVC)
+        searchNC.title = "Search"
         
+        let tagViewController = storyboard.instantiateViewController(withIdentifier: "TagsListViewController") as! TagsListViewController
         
-        rootTabBarController.setViewControllers([navigationController, navigationController2], animated: false)
+        let tagList = TagsListViewModel(appState: appDeps.appState)
+        tagViewController.bind(to: tagList)
+        
+        let tagNC = UINavigationController(rootViewController: tagViewController)
+        tagNC.title = "Tags"
+        
+        rootTabBarController.setViewControllers([tagNC, searchNC , rndNC ], animated: false)
         
     }
-    
 }

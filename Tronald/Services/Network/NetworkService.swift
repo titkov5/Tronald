@@ -31,7 +31,7 @@ public class NetworkService: NetworkServiceProtocol {
     private let defaultSession: URLSession
     
     public func performRequest(apiRequest: ApiRequestProtocol, completion: @escaping NetworkCompletionHandler) {
-        
+
         if let url = apiRequest.url {
             var sessionTask : URLSessionTask?
             switch apiRequest.httpMethod {

@@ -10,16 +10,15 @@ import UIKit
 
 class RandomMemeQuoteViewModel: CommonViewModel {
     
-    private var dataFetcher: RandomMemeQuoteFetcher
-    private var appState: RandomMemeQuoteModel
+    private var appState: RandomMemeQuoteModelProtocol
     
     var randomMemeImage: Observable <UIImage?>
     var randomQuoteText: Observable <String?>
     
-    init(appState:RandomMemeQuoteModel, dataFetcher: RandomMemeQuoteFetcher) {
+    
+    init(appState: RandomMemeQuoteModelProtocol) {
          
         self.appState = appState
-        self.dataFetcher = dataFetcher
         
         self.randomMemeImage = Observable(nil)
         self.randomQuoteText = Observable(nil)
@@ -38,10 +37,10 @@ class RandomMemeQuoteViewModel: CommonViewModel {
     }
     
     func loadRandomMeme() {
-        self.dataFetcher.refreshRandomMeme()
+        self.appState.refreshRandomMeme()
     }
     
     func loadRandomQuote() {
-        self.dataFetcher.refreshRandomQuote()
+        self.appState.refreshRandomQuote()
     }
 }
