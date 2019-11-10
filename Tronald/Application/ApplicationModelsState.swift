@@ -14,7 +14,7 @@ protocol ApplicationStateProtocol: RandomMemeQuoteModel, RandomMemeQuoteFetcher 
 
 protocol RandomMemeQuoteModel {
     var randomMemeImageData: Observable <Data?> { get }
-    var randomQuoteModel: Observable <QuoteModel?> { get }
+    var randomQuoteModel: Observable <Quote?> { get }
 }
 
 protocol RandomMemeQuoteFetcher {
@@ -25,7 +25,7 @@ protocol RandomMemeQuoteFetcher {
 class ApplicationState: ApplicationStateProtocol {
     private var networkManager: NetworkManagerProtocol
     
-    var randomQuoteModel: Observable<QuoteModel?>
+    var randomQuoteModel: Observable<Quote?>
     var randomMemeImageData: Observable<Data?>
     
     init(networkManager: NetworkManagerProtocol) {
@@ -43,7 +43,7 @@ class ApplicationState: ApplicationStateProtocol {
     func refreshRandomQuote() {
         self.networkManager.fetchRandomQuote { randomQuote in
                  if let randomQuote = randomQuote {
-                     self.randomQuoteModel.value =  QuoteModel(value: randomQuote.value)
+                     self.randomQuoteModel.value = randomQuote
                  }
              }
     }

@@ -8,10 +8,6 @@
 
 import UIKit
 
-struct QuoteModel {
-    var value: String
-}
-
 class RandomMemeQuoteViewModel: CommonViewModel {
     
     private var dataFetcher: RandomMemeQuoteFetcher

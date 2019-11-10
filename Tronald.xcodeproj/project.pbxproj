@@ -11,7 +11,6 @@
 		35025B922375345800A4A81E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35025B902375345800A4A81E /* Main.storyboard */; };
 		35025B942375345900A4A81E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35025B932375345900A4A81E /* Assets.xcassets */; };
 		35025B972375345900A4A81E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35025B952375345900A4A81E /* LaunchScreen.storyboard */; };
-		35025BA22375345900A4A81E /* TronaldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BA12375345900A4A81E /* TronaldTests.swift */; };
 		35025BAE2375368A00A4A81E /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BAD2375368A00A4A81E /* CommonViewController.swift */; };
 		35025BB1237538D900A4A81E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BB0237538D900A4A81E /* Observable.swift */; };
 		35025BB4237539B400A4A81E /* ApplicationDeps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BB3237539B400A4A81E /* ApplicationDeps.swift */; };
@@ -28,6 +27,10 @@
 		35025BD82375433300A4A81E /* WeakObjectCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BD72375433300A4A81E /* WeakObjectCollection.swift */; };
 		35025BDA237556A200A4A81E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BD9237556A200A4A81E /* AppCoordinator.swift */; };
 		35FC1FEF2376D0B100E35CFD /* ApplicationModelsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC1FEE2376D0B100E35CFD /* ApplicationModelsState.swift */; };
+		35FC20002378098600E35CFD /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1FFC2378098600E35CFD /* quotes.json */; };
+		35FC20012378098600E35CFD /* tags.json in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1FFD2378098600E35CFD /* tags.json */; };
+		35FC20022378098600E35CFD /* NetworkLayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC1FFE2378098600E35CFD /* NetworkLayerTest.swift */; };
+		35FC20032378098600E35CFD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1FFF2378098600E35CFD /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +51,6 @@
 		35025B962375345900A4A81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35025B982375345900A4A81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35025B9D2375345900A4A81E /* TronaldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TronaldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		35025BA12375345900A4A81E /* TronaldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TronaldTests.swift; sourceTree = "<group>"; };
 		35025BA32375345900A4A81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35025BAD2375368A00A4A81E /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		35025BB0237538D900A4A81E /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -66,6 +68,10 @@
 		35025BD72375433300A4A81E /* WeakObjectCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakObjectCollection.swift; sourceTree = "<group>"; };
 		35025BD9237556A200A4A81E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		35FC1FEE2376D0B100E35CFD /* ApplicationModelsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModelsState.swift; sourceTree = "<group>"; };
+		35FC1FFC2378098600E35CFD /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		35FC1FFD2378098600E35CFD /* tags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tags.json; sourceTree = "<group>"; };
+		35FC1FFE2378098600E35CFD /* NetworkLayerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLayerTest.swift; sourceTree = "<group>"; };
+		35FC1FFF2378098600E35CFD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +131,7 @@
 		35025BA02375345900A4A81E /* TronaldTests */ = {
 			isa = PBXGroup;
 			children = (
-				35025BA12375345900A4A81E /* TronaldTests.swift */,
+				35FC1FFA2378098600E35CFD /* TronaldTests */,
 				35025BA32375345900A4A81E /* Info.plist */,
 			);
 			path = TronaldTests;
@@ -203,6 +209,25 @@
 				35025BD32375413100A4A81E /* SearchQuotesListModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		35FC1FFA2378098600E35CFD /* TronaldTests */ = {
+			isa = PBXGroup;
+			children = (
+				35FC1FFB2378098600E35CFD /* Mocks */,
+				35FC1FFE2378098600E35CFD /* NetworkLayerTest.swift */,
+				35FC1FFF2378098600E35CFD /* Info.plist */,
+			);
+			name = TronaldTests;
+			sourceTree = "<group>";
+		};
+		35FC1FFB2378098600E35CFD /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				35FC1FFC2378098600E35CFD /* quotes.json */,
+				35FC1FFD2378098600E35CFD /* tags.json */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +321,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35FC20012378098600E35CFD /* tags.json in Resources */,
+				35FC20002378098600E35CFD /* quotes.json in Resources */,
+				35FC20032378098600E35CFD /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35025BA22375345900A4A81E /* TronaldTests.swift in Sources */,
+				35FC20022378098600E35CFD /* NetworkLayerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
