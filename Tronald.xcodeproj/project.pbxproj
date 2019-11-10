@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		35025B8B2375345800A4A81E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025B8A2375345800A4A81E /* AppDelegate.swift */; };
-		35025B8F2375345800A4A81E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025B8E2375345800A4A81E /* ViewController.swift */; };
 		35025B922375345800A4A81E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35025B902375345800A4A81E /* Main.storyboard */; };
 		35025B942375345900A4A81E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35025B932375345900A4A81E /* Assets.xcassets */; };
 		35025B972375345900A4A81E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35025B952375345900A4A81E /* LaunchScreen.storyboard */; };
@@ -44,7 +43,6 @@
 /* Begin PBXFileReference section */
 		35025B872375345800A4A81E /* Tronald.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tronald.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35025B8A2375345800A4A81E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35025B8E2375345800A4A81E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35025B912375345800A4A81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35025B932375345900A4A81E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35025B962375345900A4A81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 				35025BAF237538B100A4A81E /* Helpers */,
 				35025BAC2375367900A4A81E /* Base */,
 				35025B8A2375345800A4A81E /* AppDelegate.swift */,
-				35025B8E2375345800A4A81E /* ViewController.swift */,
 				35025B902375345800A4A81E /* Main.storyboard */,
 				35025B932375345900A4A81E /* Assets.xcassets */,
 				35025B952375345900A4A81E /* LaunchScreen.storyboard */,
@@ -312,7 +309,6 @@
 				35025BCD237540BA00A4A81E /* NetworkManager.swift in Sources */,
 				35025BC123753D8300A4A81E /* RandomMemeQuoteViewModel.swift in Sources */,
 				35025BC523753DA400A4A81E /* RandomMemeQuoteModel.swift in Sources */,
-				35025B8F2375345800A4A81E /* ViewController.swift in Sources */,
 				35025BB1237538D900A4A81E /* Observable.swift in Sources */,
 				35025BB4237539B400A4A81E /* ApplicationDeps.swift in Sources */,
 				35FC1FEF2376D0B100E35CFD /* ApplicationModelsState.swift in Sources */,

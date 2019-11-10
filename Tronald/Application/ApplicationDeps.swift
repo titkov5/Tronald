@@ -9,17 +9,21 @@
 import Foundation
 
 
-class ApplicationDeps: RandomMemeQuoteViewModelDeps {
+class ApplicationDeps {
     
-    var dataProvider: RandomMemeProvider {
-        return self.networkManager
-    }
+    lazy var networkService : NetworkServiceProtocol = {
+        print("CREATE " + #function)
+        return NetworkService()
+    }()
     
     lazy var networkManager : NetworkManager = {
         print("CREATE " + #function)
-        return NetworkManager()
+        return NetworkManager(networkService: self.networkService)
     }()
     
+    lazy var appState: ApplicationStateProtocol = {
+        print("CREATE " + #function)
+        return ApplicationState(networkManager: self.networkManager)
+    }()
     
-
 }

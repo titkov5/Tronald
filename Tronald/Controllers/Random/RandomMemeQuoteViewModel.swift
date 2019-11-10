@@ -8,46 +8,44 @@
 
 import UIKit
 
-protocol RandomMemeQuoteViewModelDeps {
-    var dataProvider: RandomMemeProvider { get }
-}
-
-
-struct QuoteViewModel: Identifiable, Hashable {
-    var id: Int
+struct QuoteModel {
     var value: String
 }
 
 class RandomMemeQuoteViewModel: CommonViewModel {
-    private var deps: RandomMemeQuoteViewModelDeps
-    var quote: Observable <QuoteViewModel>
-    var image: Observable <UIImage?>
     
-    private var imageData: Data? {
-        didSet {
-            if let imageData = imageData {
-                self.image.value = UIImage(data: imageData)
+    private var dataFetcher: RandomMemeQuoteFetcher
+    private var appState: RandomMemeQuoteModel
+    
+    var randomMemeImage: Observable <UIImage?>
+    var randomQuoteText: Observable <String?>
+    
+    init(appState:RandomMemeQuoteModel, dataFetcher: RandomMemeQuoteFetcher) {
+         
+        self.appState = appState
+        self.dataFetcher = dataFetcher
+        
+        self.randomMemeImage = Observable(nil)
+        self.randomQuoteText = Observable(nil)
+        
+        super.init()
+        
+        self.appState.randomMemeImageData.addObserver(owner: self) { data in
+            if let imageData = data {
+                self.randomMemeImage.value = UIImage(data: imageData)
             }
         }
-    }
-    
-    init(deps: RandomMemeQuoteViewModelDeps) {
-        self.deps = deps
-        self.quote = Observable(QuoteViewModel(id: 0, value: "text"))
-        self.image = Observable(nil)
+        
+        self.appState.randomQuoteModel.addObserver(owner: self) { quoteModel in
+            self.randomQuoteText.value = quoteModel?.value
+        }
     }
     
     func loadRandomMeme() {
-        self.deps.dataProvider.fetchRandomMeme { data in
-            self.imageData = data
-        }
+        self.dataFetcher.refreshRandomMeme()
     }
     
     func loadRandomQuote() {
-        self.deps.dataProvider.fetchRandomQuote { randomQuote in
-            if let randomQuote = randomQuote {
-                self.quote.value =  QuoteViewModel(id: 0, value: randomQuote.value)
-            }
-        }
+        self.dataFetcher.refreshRandomQuote()
     }
 }

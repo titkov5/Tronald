@@ -15,6 +15,7 @@ class RandomMemeQuoteViewController: BindableViewController<RandomMemeQuoteViewM
     
     override func viewDidLoad() {
         self.viewModel?.loadRandomQuote()
+        self.viewModel?.loadRandomMeme()
     }
     
     @IBAction func refreshRndMeme() {
@@ -22,17 +23,18 @@ class RandomMemeQuoteViewController: BindableViewController<RandomMemeQuoteViewM
     }
     
     @IBAction func refreshQuote() {
-         self.viewModel?.loadRandomQuote()
-     }
+        self.viewModel?.loadRandomQuote()
+    }
     
-     override func modelBinded(_ model: RandomMemeQuoteViewModel) {
+    override func modelBinded(_ model: RandomMemeQuoteViewModel) {
         super.modelBinded(model)
         loadViewIfNeeded()
-        model.quote.addObserver(owner: self, callback: { model in
-            self.label.text = model.value
+        
+        model.randomQuoteText.addObserver(owner: self, callback: { randomQuoteText in
+            self.label.text = randomQuoteText
         })
         
-        model.image.addObserver(owner: self) { image in
+        model.randomMemeImage.addObserver(owner: self) { image in
             self.imageView.image = image
         }
         

@@ -28,12 +28,23 @@ class AppCoordinator: Coordinator {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let rndVC = storyboard.instantiateViewController(withIdentifier: "RandomMemeQuoteViewController") as! RandomMemeQuoteViewController
 
-        let vm = RandomMemeQuoteViewModel(deps: appDeps)
+        let vm = RandomMemeQuoteViewModel(appState: appDeps.appState , dataFetcher: appDeps.appState)
+        
         rndVC.bind(to: vm )
        
-        let vc = UIViewController.init()
+        let navigationController = UINavigationController(rootViewController: rndVC)
+             navigationController.title = "RNDM"
+             //navigationController.tabBarItem.image = UIImage.init(named: "map-icon-1")
+        
+       let vc = UIViewController.init()
         vc.view.backgroundColor = .black
-        rootTabBarController.setViewControllers([rndVC, vc], animated: false)
+        
+        let navigationController2 = UINavigationController(rootViewController: vc)
+        navigationController2.title = "black"
+        
+        
+        rootTabBarController.setViewControllers([navigationController, navigationController2], animated: false)
+        
     }
     
 }

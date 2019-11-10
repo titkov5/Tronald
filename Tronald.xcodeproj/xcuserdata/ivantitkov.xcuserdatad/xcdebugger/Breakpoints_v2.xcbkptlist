@@ -7,17 +7,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "380821AF-807D-42E7-8354-C2CC7AA4B7F1"
+            uuid = "3D461FA6-6B33-404F-B565-E3E7F2806CE1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tronald/Controllers/Random/RandomMemeQuoteViewModel.swift"
+            filePath = "Tronald/Services/Network/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "RandomMemeQuoteViewModel"
-            landmarkType = "3">
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "fetchRandomMeme(completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3D461FA6-6B33-404F-B565-E3E7F2806CE1 - c8f6016261c7444e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tronald.NetworkManager.fetchRandomMeme(completionHandler: (Swift.Optional&lt;Foundation.Data&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Tronald"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivantitkov/Projects/Tronald/Tronald/Services/Network/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "194">
+               </Location>
+               <Location
+                  uuid = "3D461FA6-6B33-404F-B565-E3E7F2806CE1 - 54f8f9bf6ea0cc0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Tronald.NetworkServiceError&gt;) -&gt; () in Tronald.NetworkManager.fetchRandomMeme(completionHandler: (Swift.Optional&lt;Foundation.Data&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Tronald"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivantitkov/Projects/Tronald/Tronald/Services/Network/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "254">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6537108E-104E-4915-A9E7-5FE03D7312DB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tronald/Services/Network/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "performRequest(apiRequest:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

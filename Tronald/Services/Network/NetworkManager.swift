@@ -24,20 +24,28 @@ struct Endpoints {
     static let randomMeme = "/random/meme"
 }
 
-protocol RandomMemeProvider {
+protocol RandomMemeQuoteProvider {
     func fetchRandomMeme(completionHandler: @escaping(_ randomMemeData: Data?) -> Void)
     func fetchRandomQuote(completionHandler: @escaping(_ randomQuote: Quote?) -> Void)
 }
 
-class NetworkManager: RandomMemeProvider {
+protocol NetworkManagerProtocol: RandomMemeQuoteProvider {
     
-    private let service = NetworkService()
+}
+
+class NetworkManager: NetworkManagerProtocol {
+    
+    private let networkService: NetworkServiceProtocol
+    
+    init(networkService: NetworkServiceProtocol) {
+        self.networkService = networkService
+    }
     
     func fetchTagListModel(completionHandler: @escaping (_ tagsList: TagsListModel?) -> Void) {
         let tagRequest = ApiRequest.init(httpMethod: .GET, path: Endpoints.tag ,
                                          parameters: [:], headers: jsonHeaders)
         
-        service.fetchEntities(apiRequest: tagRequest, type: TagsListModel.self) { (listModel, error) in
+        networkService.fetchEntities(apiRequest: tagRequest, type: TagsListModel.self) { (listModel, error) in
             completionHandler(listModel)
         }
     }
@@ -50,7 +58,7 @@ class NetworkManager: RandomMemeProvider {
         
         let quoteRequest = ApiRequest.init(httpMethod: .GET, path: Endpoints.quotesByTag + tag, parameters: parameters, headers: jsonHeaders)
         
-        service.fetchEntities(apiRequest: quoteRequest, type: QuotesListModel.self) { (listModel, error) in
+        networkService.fetchEntities(apiRequest: quoteRequest, type: QuotesListModel.self) { (listModel, error) in
             completionHandler(listModel)
         }
     }
@@ -60,7 +68,7 @@ class NetworkManager: RandomMemeProvider {
         
         let searchRequest = ApiRequest.init(httpMethod: .GET, path: Endpoints.search, parameters: parameters, headers: jsonHeaders)
         
-        service.fetchEntities(apiRequest: searchRequest, type: SearchQuotesListModel.self) { (listModel, error) in
+        networkService.fetchEntities(apiRequest: searchRequest, type: SearchQuotesListModel.self) { (listModel, error) in
             completionHandler(listModel)
         }
     }
@@ -68,7 +76,7 @@ class NetworkManager: RandomMemeProvider {
     func fetchRandomQuote(completionHandler: @escaping(_ randomQuote: Quote?) -> Void) {
         let randomQuoteRequest = ApiRequest.init(httpMethod: .GET, path: Endpoints.randomQuote, headers: jsonHeaders)
         
-        service.fetchEntities(apiRequest: randomQuoteRequest, type: Quote.self) { (randomQuote, error) in
+        networkService.fetchEntities(apiRequest: randomQuoteRequest, type: Quote.self) { (randomQuote, error) in
             completionHandler(randomQuote)
         }
     }
@@ -76,7 +84,7 @@ class NetworkManager: RandomMemeProvider {
     func fetchRandomMeme(completionHandler: @escaping(_ randomMemeData: Data?) -> Void) {
         let randomMemeRequest = ApiRequest.init(httpMethod: .GET, path: Endpoints.randomMeme, headers: imageHeaders)
         
-        service.performRequest(apiRequest: randomMemeRequest) { result in
+        networkService.performRequest(apiRequest: randomMemeRequest) { result in
             switch result {
             case .failure(let error):
                 self.handleError(error: error)
