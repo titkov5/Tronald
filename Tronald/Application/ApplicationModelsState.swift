@@ -93,10 +93,7 @@ class ApplicationState: ApplicationStateProtocol {
     }
     
     func fetchQuotesForTag(_ tag: String) {
-        var page = 1
-        if quotesListModel.value != nil, let currentPage = quotesListModel.value?.page {
-           page = currentPage
-        }
+        let page = quotesListModel.value?.page ?? 1
         
         self.networkManager.fetchQuotes(page: page, size: pageSize, tag: tag) { quotesListModel in
             if let newQuotes = quotesListModel?.quotes, newQuotes.count > 0 {
