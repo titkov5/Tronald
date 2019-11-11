@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SafariServices
 
 class QuotesListViewController: BindableViewController <QuotesListViewModel>, UITableViewDelegate, UITableViewDataSource  {
     
     @IBOutlet var quotesList: UITableView!
     
-    private var quotes:[String] = [] {
+    private var quotes:[QuoteViewModel] = [] {
         didSet {
             self.quotesList.reloadData()
             self.quotesList.tableFooterView = tableViewFooter()
@@ -40,8 +41,15 @@ class QuotesListViewController: BindableViewController <QuotesListViewModel>, UI
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let quoteCell = tableView.dequeueReusableCell(withIdentifier: "QuoteTableViewCell") as! QuoteTableViewCell
-        quoteCell.setup(quoteText:self.quotes[indexPath.row])
+        quoteCell.setup(quoteViewModel:self.quotes[indexPath.row])
         return quoteCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let url = quotes[indexPath.row].url {
+            let sourceViewController = SFSafariViewController(url: url)
+            present(sourceViewController, animated: true, completion: nil)
+        }
     }
     
     func tableViewFooter() -> UIView? {

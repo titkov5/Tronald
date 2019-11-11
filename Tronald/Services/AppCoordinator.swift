@@ -33,14 +33,18 @@ class AppCoordinator: Coordinator {
         
         let rndNC = UINavigationController(rootViewController: rndVC)
         rndNC.title = "RNDM"
-             //navigationController.tabBarItem.image = UIImage.init(named: "map-icon-1")
+        rndNC.tabBarItem.image = UIImage.init(named: "gift-7")
+        rndNC.navigationBar.topItem?.title = "Random Meme & Quote"
         
         let searchViewModel = SearchQuoteViewModel(appState: appDeps.appState)
         let searchVC = storyboard.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         searchVC.bind(to: searchViewModel)
+       
         
         let searchNC = UINavigationController(rootViewController: searchVC)
         searchNC.title = "Search"
+        searchNC.tabBarItem.image = UIImage.init(named: "search-7")
+        searchNC.navigationBar.topItem?.title = "Search"
         
         let tagViewController = storyboard.instantiateViewController(withIdentifier: "TagsListViewController") as! TagsListViewController
         
@@ -49,6 +53,8 @@ class AppCoordinator: Coordinator {
         
         let tagNC = UINavigationController(rootViewController: tagViewController)
         tagNC.title = "Tags"
+        tagNC.tabBarItem.image = UIImage.init(named: "tag-7")
+        tagNC.navigationBar.topItem?.title = "Tags"
         
         rootTabBarController.setViewControllers([tagNC, searchNC , rndNC ], animated: false)
         

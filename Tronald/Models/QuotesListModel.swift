@@ -8,12 +8,45 @@
 
 import Foundation
 
+struct Source: Decodable {
+    let url: String
+    
+    enum CodingKeys: String, CodingKey {
+        case url = "url"
+    }
+}
+
 class QuoteModel: Decodable {
-    var appeared_at: String
-    var created_at: String
-    var quote_id: String
+    var appearedAt: String
+    var createdAt: String
+    var quoteId: String
     var tags: [String]
     var value: String
+    var urls: [String]
+    
+    enum CodingKeys: String, CodingKey {
+        case embedded = "_embedded"
+        case source
+        case appeared_at
+        case created_at
+        case quote_id
+        case tags
+        case value
+        case url
+    }
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        appearedAt = try container.decode(String.self, forKey: .appeared_at)
+        createdAt = try container.decode(String.self, forKey: .created_at)
+        quoteId = try container.decode(String.self, forKey: .quote_id)
+        tags = try container.decode([String].self, forKey: .tags)
+        value = try container.decode(String.self, forKey: .value)
+
+        let embeddedContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .embedded)
+        let source = try embeddedContainer.decode([Source].self, forKey: .source)
+        urls = source.map { $0.url }
+    }
 }
 
 class QuotesListModel: Decodable {
@@ -22,7 +55,6 @@ class QuotesListModel: Decodable {
     var quotes: [QuoteModel]
     var page: Int = 1
     var isFull: Bool = false
-  
     
     enum CodingKeys: String, CodingKey {
         case embedded = "_embedded"
@@ -49,4 +81,3 @@ class QuotesListModel: Decodable {
         self.isFull = self.count == self.total
     }
 }
-

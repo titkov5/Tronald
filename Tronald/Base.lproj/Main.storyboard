@@ -127,7 +127,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="QuoteTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuoteTableViewCell" rowHeight="79" id="iud-uX-T2g" customClass="QuoteTableViewCell" customModule="Tronald" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FindedQuoteTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FindedQuoteTableViewCell" rowHeight="79" id="iud-uX-T2g" customClass="FindedQuoteTableViewCell" customModule="Tronald" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="112" width="414" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iud-uX-T2g" id="bGI-me-amL">
@@ -232,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSa-p3-s68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="353.62318840579712" y="772.76785714285711"/>
+            <point key="canvasLocation" x="112" y="771"/>
         </scene>
         <!--Quotes List View Controller-->
         <scene sceneID="dyi-0u-re1">
@@ -253,8 +253,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsE-Qa-YLs">
-                                                    <rect key="frame" x="79" y="6" width="325" height="63"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsE-Qa-YLs">
+                                                    <rect key="frame" x="79" y="6" width="325" height="53"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="guC-oD-kbN"/>
@@ -279,15 +279,27 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="posted:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fti-tj-dda">
+                                                    <rect key="frame" x="361" y="65" width="43" height="12"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="43" id="qWM-fH-bWo"/>
+                                                        <constraint firstAttribute="height" constant="12" id="u9E-xE-G9p"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="CsE-Qa-YLs" firstAttribute="leading" secondItem="bWC-ju-GwG" secondAttribute="trailing" constant="22" id="Cld-MP-LCI"/>
+                                                <constraint firstAttribute="bottom" secondItem="Fti-tj-dda" secondAttribute="bottom" constant="2" id="MfY-IB-tmN"/>
                                                 <constraint firstItem="bWC-ju-GwG" firstAttribute="leading" secondItem="fZS-3g-jaH" secondAttribute="leading" constant="13" id="Oa6-tb-AYx"/>
-                                                <constraint firstAttribute="bottom" secondItem="CsE-Qa-YLs" secondAttribute="bottom" constant="10" id="QdB-Fo-rzu"/>
+                                                <constraint firstAttribute="bottom" secondItem="CsE-Qa-YLs" secondAttribute="bottom" constant="20" id="QdB-Fo-rzu"/>
                                                 <constraint firstItem="CsE-Qa-YLs" firstAttribute="top" secondItem="fZS-3g-jaH" secondAttribute="top" constant="6" id="XZO-vj-vZ5"/>
                                                 <constraint firstItem="ZXl-sV-Z2R" firstAttribute="leading" secondItem="fZS-3g-jaH" secondAttribute="leading" constant="20" id="b0N-df-edl"/>
                                                 <constraint firstItem="bWC-ju-GwG" firstAttribute="top" secondItem="fZS-3g-jaH" secondAttribute="top" constant="10" id="fA6-XF-MqT"/>
                                                 <constraint firstItem="CsE-Qa-YLs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZXl-sV-Z2R" secondAttribute="trailing" constant="8" symbolic="YES" id="gOd-bo-wHf"/>
+                                                <constraint firstItem="Fti-tj-dda" firstAttribute="trailing" secondItem="CsE-Qa-YLs" secondAttribute="trailing" id="ki6-6b-Ody"/>
                                                 <constraint firstItem="ZXl-sV-Z2R" firstAttribute="top" secondItem="bWC-ju-GwG" secondAttribute="bottom" id="mCH-wD-IBv"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZXl-sV-Z2R" secondAttribute="bottom" constant="12" id="ppI-ln-mEQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="CsE-Qa-YLs" secondAttribute="trailing" constant="10" id="qiF-sc-TRK"/>
@@ -295,6 +307,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="avatar" destination="bWC-ju-GwG" id="ULV-aA-DfV"/>
+                                            <outlet property="dateLabel" destination="Fti-tj-dda" id="yXD-sq-faU"/>
                                             <outlet property="quoteTextView" destination="CsE-Qa-YLs" id="pYg-I8-gmN"/>
                                         </connections>
                                     </tableViewCell>
@@ -320,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVD-Gn-Ayj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092.753623188406" y="771.42857142857144"/>
+            <point key="canvasLocation" x="802.89855072463774" y="770.75892857142856"/>
         </scene>
     </scenes>
     <resources>

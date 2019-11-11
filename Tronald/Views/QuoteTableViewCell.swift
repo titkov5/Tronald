@@ -12,9 +12,11 @@ class QuoteTableViewCell: UITableViewCell {
     
     @IBOutlet private var quoteTextView: UITextView!
     @IBOutlet private var avatar: UIImageView!
+    @IBOutlet private var dateLabel: UILabel!
     
-    func setup(quoteText: String) {
-        quoteTextView.text = quoteText
+    func setup(quoteViewModel: QuoteViewModel) {
+        quoteTextView.text = quoteViewModel.value //quoteText
+        dateLabel.text = quoteViewModel.created
         avatar.layer.cornerRadius = 22
         avatar.clipsToBounds = true
     }

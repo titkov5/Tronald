@@ -1,14 +1,14 @@
 //
-//  NetworkLayerTest.swift
-//  OhTronaldTests
+//  TronaldTests.swift
+//  TronaldTests
 //
-//  Created by Ivan Titkov on 14.10.2019.
+//  Created by Ivan Titkov on 11.11.2019.
 //  Copyright © 2019 none. All rights reserved.
 //
 
 import XCTest
 
-@testable import OhTronald
+@testable import Tronald
 
 class NetworkLayerTest: XCTestCase {
     var networkService: NetworkServiceProtocol?
@@ -26,7 +26,6 @@ class NetworkLayerTest: XCTestCase {
     override func setUp() {
         networkService = NetworkService()
     }
-
 
     func testPerformSimpleRequest() {
         let expectation = XCTestExpectation(description: "SimpleRequestTest")
@@ -75,7 +74,6 @@ class NetworkLayerTest: XCTestCase {
         
         networkService?.fetchEntities(apiRequest: quotesEntitiesRequest, type: QuotesListModel.self, completion: { (entities, error) in
             XCTAssertNil(error)
-            XCTAssertTrue(entities?.count == 3)
             quoteExpectation.fulfill()
         })
         
@@ -93,3 +91,4 @@ class NetworkLayerTest: XCTestCase {
     }
 
 }
+

@@ -26,10 +26,6 @@
 		35025BD82375433300A4A81E /* WeakObjectCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BD72375433300A4A81E /* WeakObjectCollection.swift */; };
 		35025BDA237556A200A4A81E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35025BD9237556A200A4A81E /* AppCoordinator.swift */; };
 		35FC1FEF2376D0B100E35CFD /* ApplicationModelsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC1FEE2376D0B100E35CFD /* ApplicationModelsState.swift */; };
-		35FC20002378098600E35CFD /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1FFC2378098600E35CFD /* quotes.json */; };
-		35FC20012378098600E35CFD /* tags.json in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1FFD2378098600E35CFD /* tags.json */; };
-		35FC20022378098600E35CFD /* NetworkLayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC1FFE2378098600E35CFD /* NetworkLayerTest.swift */; };
-		35FC20032378098600E35CFD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35FC1FFF2378098600E35CFD /* Info.plist */; };
 		35FC20072378221600E35CFD /* SearchQuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC20062378221600E35CFD /* SearchQuoteViewModel.swift */; };
 		35FC200B237847D400E35CFD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC200A237847D400E35CFD /* SearchViewController.swift */; };
 		35FC200E237853B000E35CFD /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC200D237853B000E35CFD /* QuoteTableViewCell.swift */; };
@@ -38,10 +34,15 @@
 		35FC201623786DAD00E35CFD /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC201523786DAD00E35CFD /* TagTableViewCell.swift */; };
 		35FC20192378818F00E35CFD /* QuotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC20182378818F00E35CFD /* QuotesListViewController.swift */; };
 		35FC201B237881B000E35CFD /* QuotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC201A237881B000E35CFD /* QuotesListViewModel.swift */; };
+		35FC201D237924DF00E35CFD /* FindedQuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC201C237924DF00E35CFD /* FindedQuoteTableViewCell.swift */; };
+		35FC2029237928AB00E35CFD /* TronaldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC2028237928AB00E35CFD /* TronaldTests.swift */; };
+		35FC203323792A6100E35CFD /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 35FC203123792A6100E35CFD /* quotes.json */; };
+		35FC203423792A6100E35CFD /* tags.json in Resources */ = {isa = PBXBuildFile; fileRef = 35FC203223792A6100E35CFD /* tags.json */; };
+		35FC2036237963EB00E35CFD /* StringProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FC2035237963EB00E35CFD /* StringProtocolExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		35025B9E2375345900A4A81E /* PBXContainerItemProxy */ = {
+		35FC202B237928AB00E35CFD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 35025B7F2375345800A4A81E /* Project object */;
 			proxyType = 1;
@@ -57,8 +58,6 @@
 		35025B932375345900A4A81E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35025B962375345900A4A81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35025B982375345900A4A81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		35025B9D2375345900A4A81E /* TronaldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TronaldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		35025BA32375345900A4A81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35025BAD2375368A00A4A81E /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		35025BB0237538D900A4A81E /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		35025BB3237539B400A4A81E /* ApplicationDeps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDeps.swift; sourceTree = "<group>"; };
@@ -74,10 +73,6 @@
 		35025BD72375433300A4A81E /* WeakObjectCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakObjectCollection.swift; sourceTree = "<group>"; };
 		35025BD9237556A200A4A81E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		35FC1FEE2376D0B100E35CFD /* ApplicationModelsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModelsState.swift; sourceTree = "<group>"; };
-		35FC1FFC2378098600E35CFD /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
-		35FC1FFD2378098600E35CFD /* tags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tags.json; sourceTree = "<group>"; };
-		35FC1FFE2378098600E35CFD /* NetworkLayerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLayerTest.swift; sourceTree = "<group>"; };
-		35FC1FFF2378098600E35CFD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35FC20062378221600E35CFD /* SearchQuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuoteViewModel.swift; sourceTree = "<group>"; };
 		35FC200A237847D400E35CFD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		35FC200D237853B000E35CFD /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
@@ -86,6 +81,13 @@
 		35FC201523786DAD00E35CFD /* TagTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
 		35FC20182378818F00E35CFD /* QuotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListViewController.swift; sourceTree = "<group>"; };
 		35FC201A237881B000E35CFD /* QuotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListViewModel.swift; sourceTree = "<group>"; };
+		35FC201C237924DF00E35CFD /* FindedQuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindedQuoteTableViewCell.swift; sourceTree = "<group>"; };
+		35FC2026237928AB00E35CFD /* TronaldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TronaldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		35FC2028237928AB00E35CFD /* TronaldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TronaldTests.swift; sourceTree = "<group>"; };
+		35FC202A237928AB00E35CFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35FC203123792A6100E35CFD /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		35FC203223792A6100E35CFD /* tags.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tags.json; sourceTree = "<group>"; };
+		35FC2035237963EB00E35CFD /* StringProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		35025B9A2375345900A4A81E /* Frameworks */ = {
+		35FC2023237928AB00E35CFD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -110,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				35025B892375345800A4A81E /* Tronald */,
-				35025BA02375345900A4A81E /* TronaldTests */,
+				35FC2027237928AB00E35CFD /* TronaldTests */,
 				35025B882375345800A4A81E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				35025B872375345800A4A81E /* Tronald.app */,
-				35025B9D2375345900A4A81E /* TronaldTests.xctest */,
+				35FC2026237928AB00E35CFD /* TronaldTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,15 +145,6 @@
 			path = Tronald;
 			sourceTree = "<group>";
 		};
-		35025BA02375345900A4A81E /* TronaldTests */ = {
-			isa = PBXGroup;
-			children = (
-				35FC1FFA2378098600E35CFD /* TronaldTests */,
-				35025BA32375345900A4A81E /* Info.plist */,
-			);
-			path = TronaldTests;
-			sourceTree = "<group>";
-		};
 		35025BAC2375367900A4A81E /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +158,7 @@
 			children = (
 				35025BD72375433300A4A81E /* WeakObjectCollection.swift */,
 				35025BB0237538D900A4A81E /* Observable.swift */,
+				35FC2035237963EB00E35CFD /* StringProtocolExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -228,25 +222,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		35FC1FFA2378098600E35CFD /* TronaldTests */ = {
-			isa = PBXGroup;
-			children = (
-				35FC1FFB2378098600E35CFD /* Mocks */,
-				35FC1FFE2378098600E35CFD /* NetworkLayerTest.swift */,
-				35FC1FFF2378098600E35CFD /* Info.plist */,
-			);
-			name = TronaldTests;
-			sourceTree = "<group>";
-		};
-		35FC1FFB2378098600E35CFD /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				35FC1FFC2378098600E35CFD /* quotes.json */,
-				35FC1FFD2378098600E35CFD /* tags.json */,
-			);
-			path = Mocks;
-			sourceTree = "<group>";
-		};
 		35FC20042378218A00E35CFD /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +245,7 @@
 			children = (
 				35FC200D237853B000E35CFD /* QuoteTableViewCell.swift */,
 				35FC201523786DAD00E35CFD /* TagTableViewCell.swift */,
+				35FC201C237924DF00E35CFD /* FindedQuoteTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,6 +257,25 @@
 				35FC201A237881B000E35CFD /* QuotesListViewModel.swift */,
 			);
 			path = Quotes;
+			sourceTree = "<group>";
+		};
+		35FC2027237928AB00E35CFD /* TronaldTests */ = {
+			isa = PBXGroup;
+			children = (
+				35FC20302379298C00E35CFD /* Mocks */,
+				35FC2028237928AB00E35CFD /* TronaldTests.swift */,
+				35FC202A237928AB00E35CFD /* Info.plist */,
+			);
+			path = TronaldTests;
+			sourceTree = "<group>";
+		};
+		35FC20302379298C00E35CFD /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				35FC203123792A6100E35CFD /* quotes.json */,
+				35FC203223792A6100E35CFD /* tags.json */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,22 +298,22 @@
 			productReference = 35025B872375345800A4A81E /* Tronald.app */;
 			productType = "com.apple.product-type.application";
 		};
-		35025B9C2375345900A4A81E /* TronaldTests */ = {
+		35FC2025237928AB00E35CFD /* TronaldTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 35025BA92375345900A4A81E /* Build configuration list for PBXNativeTarget "TronaldTests" */;
+			buildConfigurationList = 35FC202D237928AB00E35CFD /* Build configuration list for PBXNativeTarget "TronaldTests" */;
 			buildPhases = (
-				35025B992375345900A4A81E /* Sources */,
-				35025B9A2375345900A4A81E /* Frameworks */,
-				35025B9B2375345900A4A81E /* Resources */,
+				35FC2022237928AB00E35CFD /* Sources */,
+				35FC2023237928AB00E35CFD /* Frameworks */,
+				35FC2024237928AB00E35CFD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				35025B9F2375345900A4A81E /* PBXTargetDependency */,
+				35FC202C237928AB00E35CFD /* PBXTargetDependency */,
 			);
 			name = TronaldTests;
 			productName = TronaldTests;
-			productReference = 35025B9D2375345900A4A81E /* TronaldTests.xctest */;
+			productReference = 35FC2026237928AB00E35CFD /* TronaldTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -334,7 +329,7 @@
 					35025B862375345800A4A81E = {
 						CreatedOnToolsVersion = 11.1;
 					};
-					35025B9C2375345900A4A81E = {
+					35FC2025237928AB00E35CFD = {
 						CreatedOnToolsVersion = 11.1;
 						TestTargetID = 35025B862375345800A4A81E;
 					};
@@ -354,7 +349,7 @@
 			projectRoot = "";
 			targets = (
 				35025B862375345800A4A81E /* Tronald */,
-				35025B9C2375345900A4A81E /* TronaldTests */,
+				35FC2025237928AB00E35CFD /* TronaldTests */,
 			);
 		};
 /* End PBXProject section */
@@ -370,13 +365,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		35025B9B2375345900A4A81E /* Resources */ = {
+		35FC2024237928AB00E35CFD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35FC20012378098600E35CFD /* tags.json in Resources */,
-				35FC20002378098600E35CFD /* quotes.json in Resources */,
-				35FC20032378098600E35CFD /* Info.plist in Resources */,
+				35FC203423792A6100E35CFD /* tags.json in Resources */,
+				35FC203323792A6100E35CFD /* quotes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +383,7 @@
 			files = (
 				35025BCD237540BA00A4A81E /* NetworkManager.swift in Sources */,
 				35025BC123753D8300A4A81E /* RandomMemeQuoteViewModel.swift in Sources */,
+				35FC2036237963EB00E35CFD /* StringProtocolExtension.swift in Sources */,
 				35025BB1237538D900A4A81E /* Observable.swift in Sources */,
 				35025BB4237539B400A4A81E /* ApplicationDeps.swift in Sources */,
 				35FC1FEF2376D0B100E35CFD /* ApplicationModelsState.swift in Sources */,
@@ -411,24 +406,25 @@
 				35025BCF237540BA00A4A81E /* ApiRequest.swift in Sources */,
 				35FC20192378818F00E35CFD /* QuotesListViewController.swift in Sources */,
 				35025BD52375413100A4A81E /* QuotesListModel.swift in Sources */,
+				35FC201D237924DF00E35CFD /* FindedQuoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		35025B992375345900A4A81E /* Sources */ = {
+		35FC2022237928AB00E35CFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35FC20022378098600E35CFD /* NetworkLayerTest.swift in Sources */,
+				35FC2029237928AB00E35CFD /* TronaldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		35025B9F2375345900A4A81E /* PBXTargetDependency */ = {
+		35FC202C237928AB00E35CFD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 35025B862375345800A4A81E /* Tronald */;
-			targetProxy = 35025B9E2375345900A4A81E /* PBXContainerItemProxy */;
+			targetProxy = 35FC202B237928AB00E35CFD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -604,10 +600,9 @@
 			};
 			name = Release;
 		};
-		35025BAA2375345900A4A81E /* Debug */ = {
+		35FC202E237928AB00E35CFD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23DXEZL7HL;
@@ -626,10 +621,9 @@
 			};
 			name = Debug;
 		};
-		35025BAB2375345900A4A81E /* Release */ = {
+		35FC202F237928AB00E35CFD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23DXEZL7HL;
@@ -669,11 +663,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		35025BA92375345900A4A81E /* Build configuration list for PBXNativeTarget "TronaldTests" */ = {
+		35FC202D237928AB00E35CFD /* Build configuration list for PBXNativeTarget "TronaldTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				35025BAA2375345900A4A81E /* Debug */,
-				35025BAB2375345900A4A81E /* Release */,
+				35FC202E237928AB00E35CFD /* Debug */,
+				35FC202F237928AB00E35CFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

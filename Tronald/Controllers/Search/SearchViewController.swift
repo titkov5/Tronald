@@ -8,12 +8,12 @@
 
 import UIKit
 
-class SearchViewController: BindableViewController<SearchQuoteViewModel>, UITableViewDelegate, UITableViewDataSource {
+class SearchViewController: BindableViewController<SearchQuoteViewModel>, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var searchTextField: UITextField!
     
-    private var searchedQuotes : [String] = [] {
+    private var searchedQuotes : [FindedQuoteViewModel] = [] {
         didSet {
             self.tableView.reloadData()
         }
@@ -24,6 +24,10 @@ class SearchViewController: BindableViewController<SearchQuoteViewModel>, UITabl
         self.tableView.tableFooterView = UIView.init()
         self.tableView.estimatedRowHeight = 44.0
         self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.keyboardDismissMode = .onDrag
+        self.searchTextField.delegate = self
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func searchTextDidChanged(_ sender: UITextField) {
@@ -37,8 +41,8 @@ class SearchViewController: BindableViewController<SearchQuoteViewModel>, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let quoteCell = tableView.dequeueReusableCell(withIdentifier: "QuoteTableViewCell") as! QuoteTableViewCell
-        quoteCell.setup(quoteText:self.searchedQuotes[indexPath.row])
+        let quoteCell = tableView.dequeueReusableCell(withIdentifier: "FindedQuoteTableViewCell") as! FindedQuoteTableViewCell
+        quoteCell.setup(findedQuote:self.searchedQuotes[indexPath.row])
         return quoteCell
     }
     
@@ -48,5 +52,10 @@ class SearchViewController: BindableViewController<SearchQuoteViewModel>, UITabl
         
         self.viewModel?.quotes.addObserver(owner:self, callback: { quotes in            self.searchedQuotes = quotes
         })
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 }
