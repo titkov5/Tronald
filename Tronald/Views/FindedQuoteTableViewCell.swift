@@ -12,8 +12,8 @@ class FindedQuoteTableViewCell: UITableViewCell {
 
     @IBOutlet private var quoteTextView: UITextView!
 
-    func setup(findedQuote: FindedQuoteViewModel) {
-        quoteTextView.attributedText = findedQuote.attributedQuote
+    func setup(foundQuote: FoundQuoteViewModel) {
+        quoteTextView.attributedText = foundQuote.attributedQuote
     }
 
 }

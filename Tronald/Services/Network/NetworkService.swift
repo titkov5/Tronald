@@ -33,6 +33,7 @@ public class NetworkService: NetworkServiceProtocol {
     public func performRequest(apiRequest: ApiRequestProtocol, completion: @escaping NetworkCompletionHandler) {
 
         if let url = apiRequest.url {
+            print("===== url:", url.absoluteURL)
             var sessionTask : URLSessionTask?
             switch apiRequest.httpMethod {
             case .GET:

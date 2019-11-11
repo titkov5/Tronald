@@ -93,7 +93,7 @@ class ApplicationState: ApplicationStateProtocol {
     }
     
     func fetchQuotesForTag(_ tag: String) {
-        var page = 0
+        var page = 1
         if quotesListModel.value != nil, let currentPage = quotesListModel.value?.page {
            page = currentPage
         }
@@ -104,7 +104,6 @@ class ApplicationState: ApplicationStateProtocol {
                     let quoteModel = self.quotesListModel.value!
                     quoteModel.appendPage(newQuotes)
                     self.quotesListModel.value = quoteModel
-                    
                 } else {
                     self.quotesListModel.value = quotesListModel
                 }

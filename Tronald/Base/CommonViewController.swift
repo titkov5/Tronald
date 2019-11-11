@@ -10,11 +10,9 @@ import UIKit
 
 class CommonViewModel {
     
-
 }
 
 protocol Bindable {
-
     func bind(to model: CommonViewModel?)
 }
 

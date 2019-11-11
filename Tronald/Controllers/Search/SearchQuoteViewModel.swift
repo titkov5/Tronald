@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct FindedQuoteViewModel {
+struct FoundQuoteViewModel {
     var attributedQuote: NSAttributedString
 }
 
@@ -16,7 +16,7 @@ class SearchQuoteViewModel: CommonViewModel {
     private var appState: SearchQuotesListModelProtocol
     private var searchQuote: String = ""
     
-    var quotes: Observable<[FindedQuoteViewModel]> = Observable([])
+    var quotes: Observable<[FoundQuoteViewModel]> = Observable([])
     
     init(appState: SearchQuotesListModelProtocol) {
         self.appState = appState
@@ -26,22 +26,7 @@ class SearchQuoteViewModel: CommonViewModel {
             if let quotesModels = listModel?.quotes, quotesModels.count > 0 {
                 
                 self.quotes.value = quotesModels.map({ quoteModel in
-                    let font = UIFont.systemFont(ofSize: 15)
-                    let attributes: [NSAttributedString.Key: Any] = [
-                        .font: font,
-                        .foregroundColor: UIColor.black,
-                    ]
-                    
-                    let attributedQuote = NSMutableAttributedString(string: quoteModel.value, attributes: attributes)
-                    
-                    let Selecteattributes: [NSAttributedString.Key: Any] = [.backgroundColor: UIColor.lightGray]
-                    
-                    let ranges = quoteModel.value.nsRanges(of: self.searchQuote, options: [.caseInsensitive])
-                    ranges.forEach {range in
-                       attributedQuote.addAttributes(Selecteattributes, range: range)
-                    }
-                    
-                    return FindedQuoteViewModel(attributedQuote: attributedQuote)
+                    self.findQuoteViewModelBuilder(quoteModel: quoteModel)
                 })
             } else {
                 self.quotes.value = []
@@ -52,6 +37,37 @@ class SearchQuoteViewModel: CommonViewModel {
     func searchQuote(searchQuote: String) {
         self.searchQuote = searchQuote
         self.appState.searchQuotes(searchQuote: searchQuote)
+    }
+    
+}
+
+extension SearchQuoteViewModel {
+    private var font : UIFont {
+        return UIFont.systemFont(ofSize: 15)
+    }
+    
+    private var attributes : [NSAttributedString.Key: Any] {
+        return  [
+            .font: font,
+            .foregroundColor: UIColor.black,
+        ]
+    }
+    
+    private var highlightedTextAttr: [NSAttributedString.Key: Any] {
+        [.backgroundColor: UIColor.lightGray]
+    }
+    
+    func findQuoteViewModelBuilder(quoteModel: QuoteModel) -> FoundQuoteViewModel {
+        
+        let attributedQuote = NSMutableAttributedString(string: quoteModel.value, attributes: attributes)
+
+        let ranges = quoteModel.value.nsRanges(of: self.searchQuote, options: [.caseInsensitive])
+        ranges.forEach {range in
+            attributedQuote.addAttributes(highlightedTextAttr, range: range)
+        }
+        
+        return FoundQuoteViewModel(attributedQuote: attributedQuote)
+        
     }
 }
 

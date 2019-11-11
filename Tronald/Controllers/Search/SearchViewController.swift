@@ -13,7 +13,7 @@ class SearchViewController: BindableViewController<SearchQuoteViewModel>, UITabl
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var searchTextField: UITextField!
     
-    private var searchedQuotes : [FindedQuoteViewModel] = [] {
+    private var searchedQuotes : [FoundQuoteViewModel] = [] {
         didSet {
             self.tableView.reloadData()
         }
@@ -42,7 +42,7 @@ class SearchViewController: BindableViewController<SearchQuoteViewModel>, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let quoteCell = tableView.dequeueReusableCell(withIdentifier: "FindedQuoteTableViewCell") as! FindedQuoteTableViewCell
-        quoteCell.setup(findedQuote:self.searchedQuotes[indexPath.row])
+        quoteCell.setup(foundQuote: self.searchedQuotes[indexPath.row])
         return quoteCell
     }
     

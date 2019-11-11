@@ -79,5 +79,6 @@ class QuotesListModel: Decodable {
         self.quotes.append(contentsOf: quotes)
         self.count  = self.quotes.count
         self.isFull = self.count == self.total
+        self.page += 1
     }
 }

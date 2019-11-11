@@ -26,7 +26,9 @@ class QuotesListViewModel: CommonViewModel {
     }
     
     init(appState: TagsQuotesListModelProtocol) {
+        
         self.appState = appState
+        
         super.init()
         
         self.appState.quotesListModel.addObserver(owner: self, callImmediately: true) { quotesModels in
@@ -35,21 +37,7 @@ class QuotesListViewModel: CommonViewModel {
             
             if let quotesModels = quotesModels?.quotes {
                 self.quotes.value = quotesModels.map {
-                    //TODO viewModel creater
-                   
-
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
-                    //dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-                    let date = dateFormatter.date(from: $0.appearedAt)
-                
-                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-                    let appearedAtString = dateFormatter.string(from: date ?? Date())
-
-                    
-                    let url = URL(string: $0.urls.first ?? "")
-                    let posted = "posted:" + appearedAtString
-                    return QuoteViewModel(value: $0.value, url: url, created: posted)
+                    return self.quoteViewModelBuilder(quoteModel: $0)
                 }
             } else {
                 self.quotes.value = []
@@ -64,4 +52,24 @@ class QuotesListViewModel: CommonViewModel {
     func fetchNextPage() {
         fetchQuotesForTag(tag)
     }
+    
 }
+
+extension QuotesListViewModel {
+    
+    func quoteViewModelBuilder(quoteModel: QuoteModel) -> QuoteViewModel {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        let date = dateFormatter.date(from: quoteModel.appearedAt)
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let appearedAtString = dateFormatter.string(from: date ?? Date())
+        
+        let url = URL(string: quoteModel.urls.first ?? "")
+        let posted = "posted:" + appearedAtString
+        return QuoteViewModel(value: quoteModel.value, url: url, created: posted)
+    }
+    
+}
+

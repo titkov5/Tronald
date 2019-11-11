@@ -75,7 +75,6 @@ class NetworkManager: NetworkManagerProtocol {
     func searchQuotes(searchQuote: String, completionHandler: @escaping(_ quotes: SearchQuotesListModel?) -> Void) {
         
         let parameters = [kQuery: searchQuote]
-        
         let searchRequest = ApiRequest.init(httpMethod: .GET, path: Endpoints.search, parameters: parameters, headers: jsonHeaders)
         
         networkService.fetchEntities(apiRequest: searchRequest, type: SearchQuotesListModel.self) { (listModel, error) in
