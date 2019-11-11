@@ -12,17 +12,17 @@ import XCTest
 
 class NetworkLayerTest: XCTestCase {
     var networkService: NetworkServiceProtocol?
-    
+
     var tagEntitiesRequest: ApiRequest {
-        ApiRequest(httpMethod:  .GET, path: "/tag", headers: headers )
+        ApiRequest(httpMethod: .GET, path: "/tag", headers: headers )
     }
-    
+
     var quotesEntitiesRequest: ApiRequest {
-        ApiRequest(httpMethod: .GET, path: "/search/quote", parameters: ["query" : "obama", "page":"1", "size":"3"], headers: headers)
+        ApiRequest(httpMethod: .GET, path: "/search/quote", parameters: ["query": "obama", "page": "1", "size": "3"], headers: headers)
     }
-    
-    let headers: [String : String] = ["accept": "application/hal+json"]
-    
+
+    let headers: [String: String] = ["accept": "application/hal+json"]
+
     override func setUp() {
         networkService = NetworkService()
     }
@@ -37,7 +37,7 @@ class NetworkLayerTest: XCTestCase {
             default:
                 XCTFail()
             }
-            
+
             expectation.fulfill()
         })
         wait(for: [expectation], timeout: 3)
@@ -45,9 +45,9 @@ class NetworkLayerTest: XCTestCase {
 
     func testCheckBadUrlError() {
         let request = ApiRequest(httpMethod: .GET, path: "tag", headers: headers)
-        
+
         let expectation = XCTestExpectation(description: "SimpleRequestTest")
-        
+
         networkService?.performRequest(apiRequest: request, completion: { (result) in
             switch result {
             case .failure(let error):
@@ -60,26 +60,26 @@ class NetworkLayerTest: XCTestCase {
         })
         wait(for: [expectation], timeout: 3)
     }
-    
+
     func testFetchEntities() {
         let tagExpectation = expectation(description: "FetchTagEntities")
-        
+
         networkService?.fetchEntities(apiRequest: tagEntitiesRequest, type: TagsListModel.self, completion: { (entities, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(entities)
             tagExpectation.fulfill()
         })
-        
+
         let quoteExpectation = expectation(description: "FetchQuoteEntities")
-        
-        networkService?.fetchEntities(apiRequest: quotesEntitiesRequest, type: QuotesListModel.self, completion: { (entities, error) in
+
+        networkService?.fetchEntities(apiRequest: quotesEntitiesRequest, type: QuotesListModel.self, completion: { (_, error) in
             XCTAssertNil(error)
             quoteExpectation.fulfill()
         })
-        
+
         wait(for: [tagExpectation, quoteExpectation], timeout: 3)
     }
-    
+
     func testParsingTagEntities() {
         let tagsUrl = Bundle(for: NetworkLayerTest.self).url(forResource: "tags", withExtension: "json")
         XCTAssertNotNil(tagsUrl)
@@ -87,8 +87,7 @@ class NetworkLayerTest: XCTestCase {
         XCTAssertNotNil(data)
         let entities = networkService?.decodeResponse(entityType: TagsListModel.self, data: data!)
         XCTAssertTrue(entities?.count == 54)
-        XCTAssertEqual(entities?.tags?.first , "Hillary Clinton" )
+        XCTAssertEqual(entities?.tags?.first, "Hillary Clinton" )
     }
 
 }
-

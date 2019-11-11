@@ -9,11 +9,11 @@
 import UIKit
 
 class QuoteTableViewCell: UITableViewCell {
-    
+
     @IBOutlet private var quoteTextView: UITextView!
     @IBOutlet private var avatar: UIImageView!
     @IBOutlet private var dateLabel: UILabel!
-    
+
     func setup(quoteViewModel: QuoteViewModel) {
         quoteTextView.text = quoteViewModel.value //quoteText
         dateLabel.text = quoteViewModel.created

@@ -9,11 +9,11 @@
 import Foundation
 
 class TagsListViewModel: CommonViewModel {
-    
+
     var appState: TagsQuotesListModelProtocol
-    
+
     var tags: Observable<[String]> = Observable([])
-    
+
     init(appState: TagsQuotesListModelProtocol) {
         self.appState = appState
         super.init()
@@ -21,7 +21,7 @@ class TagsListViewModel: CommonViewModel {
             self.tags.value = tagList?.tags ?? []
         }
     }
-    
+
     func fetchTags() {
         appState.fetchTags()
     }

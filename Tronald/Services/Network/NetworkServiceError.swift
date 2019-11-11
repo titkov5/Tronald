@@ -27,14 +27,14 @@ public enum NetworkServiceError: Error, Equatable {
     case teapot
     case tooManyRequests
     case preconditionFailed
-    
+
     public static func ==(lhs: NetworkServiceError, rhs: NetworkServiceError) -> Bool {
         switch (lhs, rhs) {
         case (.badUrl, .badUrl),
              (.badRequest, .badRequest),
              (.unsupportedHttpMethod, .unsupportedHttpMethod),
              (.networkError, .networkError),
-             (.missingCredentials,.missingCredentials),
+             (.missingCredentials, .missingCredentials),
              (.authenticationFailed, .authenticationFailed),
              (.alreadyExists, .alreadyExists),
              (.internalServerError, .internalServerError),
@@ -44,7 +44,7 @@ public enum NetworkServiceError: Error, Equatable {
             return false
         }
     }
-    
+
     init?(responseStatus: Int) {
         switch responseStatus {
         case 400:
@@ -77,10 +77,9 @@ public enum NetworkServiceError: Error, Equatable {
             self = .internetConnectionProblem
         case -1003:
             self = .internetConnectionProblem
-            
+
         default:
             return nil
         }
     }
 }
-

@@ -11,30 +11,29 @@ import Foundation
 public typealias NetworkCompletionHandler = (Result<Data, NetworkServiceError>) -> Void
 
 public protocol NetworkServiceProtocol {
-    
+
     func performRequest(apiRequest: ApiRequestProtocol, completion: @escaping NetworkCompletionHandler)
-   
-    func fetchEntities<T>(apiRequest: ApiRequestProtocol, type: T.Type, completion: @escaping (T?, NetworkServiceError?) -> Void) where T:Decodable
-    
-    func decodeResponse<T:Decodable>(entityType:T.Type, data:Data) -> T?
+
+    func fetchEntities<T>(apiRequest: ApiRequestProtocol, type: T.Type, completion: @escaping (T?, NetworkServiceError?) -> Void) where T: Decodable
+
+    func decodeResponse<T: Decodable>(entityType: T.Type, data: Data) -> T?
 }
 
 public class NetworkService: NetworkServiceProtocol {
-    
+
     init() {
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
         config.urlCache = nil
         self.defaultSession = URLSession(configuration: config)
     }
-    
+
     private let defaultSession: URLSession
-    
+
     public func performRequest(apiRequest: ApiRequestProtocol, completion: @escaping NetworkCompletionHandler) {
 
         if let url = apiRequest.url {
-            print("===== url:", url.absoluteURL)
-            var sessionTask : URLSessionTask?
+            var sessionTask: URLSessionTask?
             switch apiRequest.httpMethod {
             case .GET:
                 sessionTask = defaultSession.dataTask(with: url) { ( data, response, error) in
@@ -43,7 +42,7 @@ public class NetworkService: NetworkServiceProtocol {
                             if response.statusCode == 200 {
                                 if let data = data {
                                     completion(.success(data))
-                                }else {
+                                } else {
                                     completion(.failure(.emptyData))
                                 }
                             } else {
@@ -56,25 +55,25 @@ public class NetworkService: NetworkServiceProtocol {
                         }
                     }
                 }
-                
+
                 sessionTask?.resume()
-                
+
             default:
                 DispatchQueue.main.async {
                     completion(.failure(.unsupportedHttpMethod))
                 }
                 return
             }
-        }  else {
+        } else {
             DispatchQueue.main.async {
                 completion(.failure(.badUrl))
             }
-            
+
             return
         }
     }
-    
-    public func fetchEntities<T:Decodable>(apiRequest: ApiRequestProtocol, type: T.Type, completion: @escaping (T?, NetworkServiceError?) -> Void) {
+
+    public func fetchEntities<T: Decodable>(apiRequest: ApiRequestProtocol, type: T.Type, completion: @escaping (T?, NetworkServiceError?) -> Void) {
         performRequest(apiRequest: apiRequest) { result in
             switch result {
             case .failure(let error):
@@ -86,20 +85,19 @@ public class NetworkService: NetworkServiceProtocol {
             }
         }
     }
-    
-    public func decodeResponse<T:Decodable>(entityType:T.Type, data:Data) -> T? {
+
+    public func decodeResponse<T: Decodable>(entityType: T.Type, data: Data) -> T? {
         do {
             let response = try JSONDecoder().decode(entityType, from: data)
             return response
         } catch let error {
             self.handleError(error: error)
         }
-        
+
         return nil
     }
-    
-    
-    func handleError(error : Error) {
+
+    func handleError(error: Error) {
         //handle error on low level
         print(error.localizedDescription)
     }

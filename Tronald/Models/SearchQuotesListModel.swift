@@ -9,14 +9,14 @@
 import Foundation
 
 class SearchQuotesListModel: Decodable {
-    
+
     enum CodingKeys: String, CodingKey {
         case embedded = "_embedded"
         case quotes
     }
-    
+
     var quotes: [QuoteModel]
-    
+
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let nestedContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .embedded)

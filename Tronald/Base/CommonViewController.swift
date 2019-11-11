@@ -9,7 +9,7 @@
 import UIKit
 
 class CommonViewModel {
-    
+
 }
 
 protocol Bindable {

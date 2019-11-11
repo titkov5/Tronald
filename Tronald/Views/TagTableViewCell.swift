@@ -9,12 +9,10 @@
 import UIKit
 
 class TagTableViewCell: UITableViewCell {
-    
+
     @IBOutlet private var taglabel: UILabel!
-    
+
     func setup(text: String) {
         self.taglabel.text = text
     }
 }
-
-

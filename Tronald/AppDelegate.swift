@@ -12,9 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var coordinator = AppCoordinator()
     var window: UIWindow?
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    
+
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.rootViewController = coordinator.rootTabBarController
         self.window?.makeKeyAndVisible()
@@ -24,4 +24,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

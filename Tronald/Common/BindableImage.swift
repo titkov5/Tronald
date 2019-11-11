@@ -24,7 +24,7 @@ class BindableImageViewModel: CommonViewModel {
 }
 
 class BindableImage: CommonView {
-    
+
     // MARK: - Public Properties
 
     override var intrinsicContentSize: CGSize {
@@ -32,7 +32,7 @@ class BindableImage: CommonView {
     }
 
     // MARK: - Public
-    
+
     override func model() -> BindableImageViewModel? {
         return super.model() as? BindableImageViewModel
     }
@@ -47,7 +47,7 @@ class BindableImage: CommonView {
 
     override func setupConstraints() {
         super.setupConstraints()
-        
+
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.fillContainer()
     }

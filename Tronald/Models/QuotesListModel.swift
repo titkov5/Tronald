@@ -10,7 +10,7 @@ import Foundation
 
 struct Source: Decodable {
     let url: String
-    
+
     enum CodingKeys: String, CodingKey {
         case url = "url"
     }
@@ -23,7 +23,7 @@ class QuoteModel: Decodable {
     var tags: [String]
     var value: String
     var urls: [String]
-    
+
     enum CodingKeys: String, CodingKey {
         case embedded = "_embedded"
         case source
@@ -34,7 +34,7 @@ class QuoteModel: Decodable {
         case value
         case url
     }
-    
+
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         appearedAt = try container.decode(String.self, forKey: .appeared_at)
@@ -55,7 +55,7 @@ class QuotesListModel: Decodable {
     var quotes: [QuoteModel]
     var page: Int = 1
     var isFull: Bool = false
-    
+
     enum CodingKeys: String, CodingKey {
         case embedded = "_embedded"
         case tags
@@ -63,18 +63,18 @@ class QuotesListModel: Decodable {
         case total
         case quotes
     }
-    
+
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         count = try container.decode(Int.self, forKey: .count)
         total = try container.decode(Int.self, forKey: .total)
-        
+
         let nestedContainer = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .embedded)
         quotes = try nestedContainer.decode([QuoteModel].self, forKey: .tags)
         page += 1
         isFull = total == count
     }
-    
+
     func appendPage(_ quotes: [QuoteModel]) {
         self.quotes.append(contentsOf: quotes)
         self.count  = self.quotes.count
